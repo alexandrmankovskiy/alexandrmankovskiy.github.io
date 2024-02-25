@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const color_url = "http://127.0.0.1:8000/get-color"
+    fetch(color_url)
+        .then(r => {
+            if (!r.ok){
+                throw new Error('Network response was not ok');
+            }
+            return r;
+        })
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => {
+            console.error("Error: ",error)
+        })
+</script>
+</html>
